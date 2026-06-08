@@ -19,20 +19,38 @@
 - JavaScript Engine (Chrome / NodeJS - V8, Edge - Chakra, Opera / Safari - SpiderMonkey)
 - Garbage collection
 
-# Browser
+### Browser
 
 - HTML (DOM) : presentation (Nouns)
 - CSS (CSSOM): Appearence and layout (Adjectives)
 - JAVASCRIPT : Behaviour (Verbs)
 
-# DOM : Document Object Model
+### DOM : Document Object Model
 
 - Hierarchical representation of HTML elements
 
-# Asynchronous Activities
+### Asynchronous Activities
 
 - Timers
 - Reading / Writing
 - Obtaining Socket
 - Remote Server Calls
 - Promises
+
+### JSON - number, string, boolean, nested object / array
+
+### JavaScript Object - Function, Date, Symbol
+
+#### Scope Chaining
+
+Local Scope -> Outer Scope -> Global Scope
+
+### JavaScript Engine
+
+- Creational Phase : Memory allocation
+- Executional Phase : Executes program
+
+### JavaScript DataTypes
+
+- Primitive : Number, String, Boolean
+- References : Function, Array, Object, Date
