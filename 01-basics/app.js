@@ -219,38 +219,62 @@
 // -----------------
 // FETCHING POSTS
 
-window.onload = function () {
-  const btnFetch = document.querySelector("#btn-fetch");
-  const listContainer = document.querySelector("#list-container");
+// window.onload = function () {
+//   const btnFetch = document.querySelector("#btn-fetch");
+//   const listContainer = document.querySelector("#list-container");
 
-  // Using then().catch()
-  btnFetch.addEventListener("click", function () {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => response.json())
-      .then((posts) => {
-        posts.forEach((post) => {
-          const liElement = document.createElement("li");
-          liElement.innerHTML = post.title;
-          listContainer.appendChild(liElement);
-        });
-      })
-      .catch((err) => console.error(err));
+//   // Using then().catch()
+//   btnFetch.addEventListener("click", function () {
+//     fetch("https://jsonplaceholder.typicode.com/posts")
+//       .then((response) => response.json())
+//       .then((posts) => {
+//         posts.forEach((post) => {
+//           const liElement = document.createElement("li");
+//           liElement.innerHTML = post.title;
+//           listContainer.appendChild(liElement);
+//         });
+//       })
+//       .catch((err) => console.error(err));
+//   });
+
+//   // Using Async...await
+//   //   btnFetch.addEventListener("click", async function () {
+//   //     try {
+//   //       const response = await fetch(
+//   //         "https://jsonplaceholder.typicode.com/posts",
+//   //       );
+//   //       const posts = await response.json();
+//   //       posts.forEach((post) => {
+//   //         const liElement = document.createElement("li");
+//   //         liElement.innerHTML = post.title.toUpperCase();
+//   //         listContainer.appendChild(liElement);
+//   //       });
+//   //     } catch (err) {
+//   //       console.error("Unable to fetch posts");
+//   //     }
+//   //   });
+// };
+
+// ---------------
+// PROMISE API - STATIC METHODS
+// - all : all or none
+// - allSettled : settled with reason
+// - resolve : Immediately resolve
+// - reject : immediately reject
+// - race : first settled promise result
+// - any : first successfully settled promise result
+
+function promiseFactory(data, ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(data), ms);
   });
+}
 
-  // Using Async...await
-  //   btnFetch.addEventListener("click", async function () {
-  //     try {
-  //       const response = await fetch(
-  //         "https://jsonplaceholder.typicode.com/posts",
-  //       );
-  //       const posts = await response.json();
-  //       posts.forEach((post) => {
-  //         const liElement = document.createElement("li");
-  //         liElement.innerHTML = post.title.toUpperCase();
-  //         listContainer.appendChild(liElement);
-  //       });
-  //     } catch (err) {
-  //       console.error("Unable to fetch posts");
-  //     }
-  //   });
-};
+const p1 = promiseFactory("First Promise", 2000);
+const p2 = promiseFactory("Second Promise", 1500);
+const p3 = promiseFactory("Third Promise", 4000);
+const p4 = Promise.reject(new Error("Something went wrong"));
+
+Promise.any([p1, p2, p3, p4])
+  .then((result) => console.log("RESULT : ", result))
+  .catch((err) => console.error(err));
