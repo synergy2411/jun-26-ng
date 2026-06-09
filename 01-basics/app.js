@@ -183,35 +183,53 @@
 
 // Producers
 
-function demoBuildPromise(arr) {
-  return new Promise(function (resolve, reject) {
-    setTimeout(() => {
-      if (arr.length > 2) {
-        resolve({ message: "Resolved successfully" });
-      } else {
-        reject(new Error("Something went wrong!"));
-      }
-    }, 2000);
+// function demoBuildPromise(arr) {
+//   return new Promise(function (resolve, reject) {
+//     setTimeout(() => {
+//       if (arr.length > 2) {
+//         resolve({ message: "Resolved successfully" });
+//       } else {
+//         reject(new Error("Something went wrong!"));
+//       }
+//     }, 2000);
+//   });
+// }
+
+// // Consumer
+// // - then().catch()
+// function demoConsumePromiseUsingThenAndCatch() {
+//   demoBuildPromise([1, 2])
+//     .then((response) => console.log("Response : ", response))
+//     .catch((error) => console.error(error));
+// }
+// demoConsumePromiseUsingThenAndCatch();
+
+// // - Async...await (Preferred way)
+// async function demoConsumePromiseUsingAsyncAwait() {
+//   try {
+//     let response = await demoBuildPromise([3, 4]);
+//     console.log("Response : ", response);
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }
+
+// demoConsumePromiseUsingAsyncAwait();
+
+// -----------------
+// FETCHING POSTS
+
+window.onload = function () {
+  const btnFetch = document.querySelector("#btn-fetch");
+  const listContainer = document.querySelector("#list-container");
+
+  btnFetch.addEventListener("click", async function () {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const posts = await response.json();
+    posts.forEach((post) => {
+      const liElement = document.createElement("li");
+      liElement.innerHTML = post.title.toUpperCase();
+      listContainer.appendChild(liElement);
+    });
   });
-}
-
-// Consumer
-// - then().catch()
-function demoConsumePromiseUsingThenAndCatch() {
-  demoBuildPromise([1, 2])
-    .then((response) => console.log("Response : ", response))
-    .catch((error) => console.error(error));
-}
-demoConsumePromiseUsingThenAndCatch();
-
-// - Async...await
-async function demoConsumePromiseUsingAsyncAwait() {
-  try {
-    let response = await demoBuildPromise([3, 4]);
-    console.log("Response : ", response);
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-demoConsumePromiseUsingAsyncAwait();
+};
