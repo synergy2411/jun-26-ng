@@ -124,13 +124,94 @@
 // -------------------
 // DEFAULT PARAMETERS
 
-function demoDefaultParameter(arr = []) {
-  //   arr = arr || [];
-  if (arr.length > 2) {
-    console.log("do something");
-  } else {
-    console.log("do something else");
+// function demoDefaultParameter(arr = []) {
+//   //   arr = arr || [];
+//   if (arr.length > 2) {
+//     console.log("do something");
+//   } else {
+//     console.log("do something else");
+//   }
+// }
+
+// demoDefaultParameter([1, 2, 3]);
+
+// ---------------------
+// Higher Order Function - receives functions as argument
+// Callback - supplied as argument to HoF
+// Callbacks - "Error First, Callback Last"
+// function demoHigherOrder(arr, callback) {
+//   if (arr.length > 2) {
+//     callback(null, "Length is greater than two");
+//   } else {
+//     callback(new Error("Too less values"));
+//   }
+// }
+
+// demoHigherOrder([1, 2], function (error, data) {
+//   if (error) {
+//     console.error(error);
+//     return;
+//   }
+//   console.log(data);
+// });
+
+// ---------------
+// Working with JSON
+// - JSON.stringify()
+// - JSON.parse()
+
+// let user = {
+//   firstName: "John",
+//   lastName: "Doe",
+//   age: 23,
+//   dob: new Date("Dec 21, 2001"),
+//   getDetails: function () {
+//     return this.firstName + " " + this.lastName;
+//   },
+// };
+
+// let stringifyJson = JSON.stringify(user);
+
+// console.log("Stringify JSON : ", stringifyJson);
+
+// let jsObject = JSON.parse(stringifyJson);
+
+// console.log("JavaScript Object : ", jsObject);
+
+// --------------------
+// PROMISES
+
+// Producers
+
+function demoBuildPromise(arr) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(() => {
+      if (arr.length > 2) {
+        resolve({ message: "Resolved successfully" });
+      } else {
+        reject(new Error("Something went wrong!"));
+      }
+    }, 2000);
+  });
+}
+
+// Consumer
+// - then().catch()
+function demoConsumePromiseUsingThenAndCatch() {
+  demoBuildPromise([1, 2])
+    .then((response) => console.log("Response : ", response))
+    .catch((error) => console.error(error));
+}
+demoConsumePromiseUsingThenAndCatch();
+
+// - Async...await
+async function demoConsumePromiseUsingAsyncAwait() {
+  try {
+    let response = await demoBuildPromise([3, 4]);
+    console.log("Response : ", response);
+  } catch (err) {
+    console.error(err);
   }
 }
 
-demoDefaultParameter([1, 2, 3]);
+demoConsumePromiseUsingAsyncAwait();
