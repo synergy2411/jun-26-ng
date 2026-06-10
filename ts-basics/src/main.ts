@@ -178,18 +178,101 @@
 // -----------------
 // GENERICS
 
-function addAtBeggening<T>(value: T, collection: T[]): T[] {
-  return [value, ...collection];
+// function addAtBeggening<T>(value: T, collection: T[]): T[] {
+//   return [value, ...collection];
+// }
+
+// const newCollection = addAtBeggening<string>("Joey", [
+//   "Monica",
+//   "Ross",
+//   "Rachel",
+// ]);
+
+// console.log(typeof newCollection[0]);
+
+// const numberCollection = addAtBeggening<number>(99, [98, 91, 89, 79]);
+
+// console.log(typeof numberCollection[0]);
+
+// GENERIC CLASS
+// class List<T> {
+//   private list: T[] = [];
+
+//   add(item: T): void {
+//     this.list.push(item);
+//   }
+
+//   remove(index: number) {
+//     this.list.splice(index, 1);
+//   }
+
+//   getAllItem(): T[] {
+//     return this.list.slice(0);
+//   }
+// }
+
+// let stringList = new List<string>();
+// stringList.add("Monica");
+// stringList.add("Ross");
+// stringList.add("Rachel");
+// console.log("Before Remove : ", stringList.getAllItem());
+// stringList.remove(0);
+// console.log("After Remove : ", stringList.getAllItem());
+
+// let numberList = new List<number>();
+// numberList.add(99);
+// numberList.add(98);
+// numberList.add(92);
+// numberList.add(95);
+// console.log(numberList.getAllItem());
+
+// interface Resource<T, K> {
+//   resourceName: T;
+//   resourceLocation: K;
+// }
+
+// let resourceOne: Resource<string, number> = {
+//   resourceName: "Server - 1",
+//   resourceLocation: 72.48,
+// };
+
+// console.log("Resorce One : ", resourceOne);
+
+// Extending Genrics
+class Vehicle {
+  private type: number;
+  constructor(type: number) {
+    this.type = type;
+  }
+  getType() {
+    return this.type;
+  }
 }
 
-const newCollection = addAtBeggening<string>("Joey", [
-  "Monica",
-  "Ross",
-  "Rachel",
-]);
+class Car extends Vehicle {
+  private model: string;
+  constructor(type: number, model: string) {
+    super(type);
+    this.model = model;
+  }
+  getDetails() {
+    return `
+        Car Type : ${super.getType()}
+        Car Model : ${this.model}
+        `;
+  }
+}
 
-console.log(typeof newCollection[0]);
+function demoVehicle<T extends Vehicle>(vehicle: T) {
+  console.log("Vehicle : ", vehicle.getType());
+}
 
-const numberCollection = addAtBeggening<number>(99, [98, 91, 89, 79]);
+let twoWheeler = new Vehicle(2);
 
-console.log(typeof numberCollection[0]);
+demoVehicle<Vehicle>(twoWheeler);
+
+let car = new Car(4, "Honda");
+
+demoVehicle<Car>(car);
+
+// demoVehicle<string>("Hello World");
