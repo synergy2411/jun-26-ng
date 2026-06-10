@@ -54,3 +54,30 @@ Local Scope -> Outer Scope -> Global Scope
 
 - Primitive : Number, String, Boolean
 - References : Function, Array, Object, Date
+
+## ES6+ Features
+
+- Arrow Function (=>)
+- Destructuring : unpacking the collection (Object / Array)
+- Rest / Spread : (...)
+- Template Literals : (``)
+- Default Parameters
+
+### Promises
+
+- container for future value
+- Consume promise using
+  > then().catch()
+  > Asycn...await
+- Static Methods : all, allSettled, race, any, resolve, reject
+
+- Fetch API
+
+## Vite Tool
+
+- npm create vite@latest
+- Project Name
+- Vanilla
+- TypeScript
+
+# TypeScript : JavaScript with Type System
