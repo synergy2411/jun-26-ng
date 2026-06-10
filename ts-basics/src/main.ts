@@ -278,23 +278,36 @@
 // demoVehicle<string>("Hello World");
 // -------------
 
-function Logger(originalMethod: any, context: ClassMethodDecoratorContext) {
-  console.log("Context : ", context);
-  const methodName = String(context.name);
-  return function (this: any, ...args: any[]) {
-    console.log("Start of the Method : ", methodName);
-    let result = originalMethod.call(this, ...args);
-    console.log("End of the Method : ", methodName);
-    return result;
-  };
-}
+// function Logger(originalMethod: any, context: ClassMethodDecoratorContext) {
+//   console.log("Context : ", context);
+//   const methodName = String(context.name);
+//   return function (this: any, ...args: any[]) {
+//     console.log("Start of the Method : ", methodName);
+//     let result = originalMethod.call(this, ...args);
+//     console.log("End of the Method : ", methodName);
+//     return result;
+//   };
+// }
 
-class Test {
-  @Logger
-  greet(name: string) {
-    return `Hello ${name}`;
-  }
-}
+// class Test {
+//   @Logger
+//   greet(name: string) {
+//     return `Hello ${name}`;
+//   }
+// }
 
-let t = new Test();
-console.log(t.greet("Monica Geller"));
+// let t = new Test();
+// console.log(t.greet("Monica Geller"));
+// -----------------
+
+import sqr, { sum, multiply } from "./utils/maths";
+// import sqr from "./utils/maths";
+
+let result = sum(4, 5);
+console.log("Sum Result : ", result);
+
+result = multiply(3, 4);
+console.log("Multiply Result : ", result);
+
+result = sqr(4);
+console.log("Square Result : ", result);

@@ -88,3 +88,10 @@ Local Scope -> Outer Scope -> Global Scope
 > tsc --version
 > tsc src/main.ts
 > node src/main.js
+
+### Decorators
+
+- Class : @Component, @NgModule, @Injectable etc
+- Class Method : @HostBinding
+- Method Parameters : @skip, @Optional, @Host
+- Class Properties : @Input, @Ouput
