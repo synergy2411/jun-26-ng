@@ -79,18 +79,98 @@
 //   throw new Error("Something went wrong");
 // }
 
-window.onload = function () {
-  const txtInputEl = document.getElementById("txtInput") as HTMLInputElement;
-  const btnAddEl = document.getElementById("btnAdd") as HTMLButtonElement;
-  const listContainerEl = document.getElementById(
-    "listContainer",
-  ) as HTMLUListElement;
+// window.onload = function () {
+//   const txtInputEl = document.getElementById("txtInput") as HTMLInputElement;
+//   const btnAddEl = document.getElementById("btnAdd") as HTMLButtonElement;
+//   const listContainerEl = document.getElementById(
+//     "listContainer",
+//   ) as HTMLUListElement;
 
-  btnAddEl.addEventListener("click", function (event: PointerEvent) {
-    event.preventDefault();
-    let value = txtInputEl.value;
-    const liElement = document.createElement("li");
-    liElement.innerHTML = value.toUpperCase();
-    listContainerEl.appendChild(liElement);
-  });
-};
+//   btnAddEl.addEventListener("click", function (event: PointerEvent) {
+//     event.preventDefault();
+//     let value = txtInputEl.value;
+//     const liElement = document.createElement("li");
+//     liElement.innerHTML = value.toUpperCase();
+//     listContainerEl.appendChild(liElement);
+//   });
+// };
+
+// ---------------
+//  Class
+class Person {
+  private name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+  getName() {
+    return this.name;
+  }
+}
+
+class Student extends Person {
+  private studId: string;
+  private _age: number = 0;
+  static numberOfStudents = 0;
+
+  constructor(id: string, name: string) {
+    super(name);
+    this.studId = id;
+    Student.numberOfStudents += 1;
+  }
+
+  get age() {
+    return this._age;
+  }
+
+  set age(value: number) {
+    this._age = value;
+  }
+
+  public getDetails() {
+    return `
+        Student ID : ${this.studId}
+        Student Name : ${super.getName()}
+        Student Age : ${this.age}
+        Total Enrollled Students : ${Student.numberOfStudents}
+        `;
+  }
+}
+
+let monica = new Student("S001", "Monica Geller");
+monica.age = 22;
+// console.log(monica.getDetails());
+
+let ross = new Student("S002", "Ross Geller");
+ross.age = 24;
+// console.log(ross.getDetails());
+
+// ------------
+// ABSTRACT CLASS
+abstract class Recipe {
+  abstract prepareIngredients(): void;
+  abstract cookRecipe(): void;
+  abstract cleanUpDishes(): void;
+
+  execute() {
+    this.prepareIngredients();
+    this.cookRecipe();
+    this.cleanUpDishes();
+  }
+}
+
+class Tea extends Recipe {
+  prepareIngredients(): void {
+    console.log("Bring tea leafs, water, milk and some sugar");
+  }
+
+  cookRecipe(): void {
+    console.log("boil water for 5 minutes and then add all ingredients");
+  }
+
+  cleanUpDishes(): void {
+    console.log("Wash all utensils");
+  }
+}
+
+let tea = new Tea();
+tea.execute();
