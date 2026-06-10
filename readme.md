@@ -81,3 +81,10 @@ Local Scope -> Outer Scope -> Global Scope
 - TypeScript
 
 # TypeScript : JavaScript with Type System
+
+## TypeScript compiler
+
+> [sudo] npm install typescript -g
+> tsc --version
+> tsc src/main.ts
+> node src/main.js
