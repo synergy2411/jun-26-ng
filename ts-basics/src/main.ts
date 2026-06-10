@@ -302,6 +302,7 @@
 
 import sqr, { sum, multiply } from "./utils/maths";
 // import sqr from "./utils/maths";
+import { v4 } from "uuid";
 
 let result = sum(4, 5);
 console.log("Sum Result : ", result);
@@ -311,3 +312,5 @@ console.log("Multiply Result : ", result);
 
 result = sqr(4);
 console.log("Square Result : ", result);
+
+console.log("Unique Version : ", v4());
