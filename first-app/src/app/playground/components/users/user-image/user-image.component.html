@@ -1,1 +1,8 @@
-<p>user-image works!</p>
+<img
+  class="img-fluid rounded-circle mb-2"
+  [src]="user.avatar"
+  alt="This is user image"
+/>
+<div class="text-center">
+  <button class="btn btn-info" (click)="onGenerate()">More Info</button>
+</div>

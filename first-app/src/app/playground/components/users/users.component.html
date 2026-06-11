@@ -3,17 +3,10 @@
     <li class="list-group-item">
       <div class="row">
         <div class="col-4">
-          <app-user-image></app-user-image>
-          <img
-            class="img-fluid rounded-circle mb-2"
-            [src]="user.avatar"
-            alt="This is user image"
-          />
-          <div class="text-center">
-            <button class="btn btn-info" (click)="onMoreInfo(user)">
-              More Info
-            </button>
-          </div>
+          <app-user-image
+            [user]="user"
+            (userEvent)="onMoreInfo($event)"
+          ></app-user-image>
         </div>
         <div class="col-8">
           <app-user-info [user]="user"></app-user-info>
