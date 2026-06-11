@@ -1,0 +1,8 @@
+<img [src]="user.avatar" alt="This is user image" />
+
+<h2>{{ user.firstName }} {{ user.lastName }}</h2>
+<p>Date of Birth : <span [innerHTML]="user.dob"></span></p>
+<p>Income : <span [innerHTML]="user.income"></span></p>
+<p>Total Votes : {{ user.votes }}</p>
+
+<input type="number" [value]="user.votes" />

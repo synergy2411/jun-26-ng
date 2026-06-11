@@ -1,0 +1,55 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36">
+  <diagram name="Page-1" id="1UTz7WRcU-rsn9oAVr92">
+    <mxGraphModel dx="566" dy="338" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8-euDCAgZOfYWiMqPwih-2" parent="1" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;autosizeText=1;" value="Angular App Bootstrap Process" vertex="1">
+          <mxGeometry height="40" width="350" x="290" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8-euDCAgZOfYWiMqPwih-5" edge="1" parent="1" source="8-euDCAgZOfYWiMqPwih-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="8-euDCAgZOfYWiMqPwih-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8-euDCAgZOfYWiMqPwih-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="ng server / npm start" vertex="1">
+          <mxGeometry height="30" width="60" x="230" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="8-euDCAgZOfYWiMqPwih-7" edge="1" parent="1" source="8-euDCAgZOfYWiMqPwih-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="8-euDCAgZOfYWiMqPwih-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8-euDCAgZOfYWiMqPwih-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="runs development server at PORT : 4200" vertex="1">
+          <mxGeometry height="30" width="90" x="370" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="8-euDCAgZOfYWiMqPwih-9" edge="1" parent="1" source="8-euDCAgZOfYWiMqPwih-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="8-euDCAgZOfYWiMqPwih-8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8-euDCAgZOfYWiMqPwih-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="loads index.html" vertex="1">
+          <mxGeometry height="30" width="90" x="540" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="8-euDCAgZOfYWiMqPwih-11" edge="1" parent="1" source="8-euDCAgZOfYWiMqPwih-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="8-euDCAgZOfYWiMqPwih-10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8-euDCAgZOfYWiMqPwih-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="loads main..ts" vertex="1">
+          <mxGeometry height="30" width="90" x="540" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="8-euDCAgZOfYWiMqPwih-13" edge="1" parent="1" source="8-euDCAgZOfYWiMqPwih-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="8-euDCAgZOfYWiMqPwih-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8-euDCAgZOfYWiMqPwih-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="bootstrapping AppModule&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="90" x="370" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="8-euDCAgZOfYWiMqPwih-15" edge="1" parent="1" source="8-euDCAgZOfYWiMqPwih-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="8-euDCAgZOfYWiMqPwih-14" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8-euDCAgZOfYWiMqPwih-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="bootstrapping AppComponent" vertex="1">
+          <mxGeometry height="30" width="90" x="200" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="8-euDCAgZOfYWiMqPwih-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="AppComponent Template / Styles" vertex="1">
+          <mxGeometry height="30" width="90" x="200" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="8-euDCAgZOfYWiMqPwih-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&amp;lt;app-root&amp;gt;" vertex="1">
+          <mxGeometry height="30" width="100" x="580" y="170" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

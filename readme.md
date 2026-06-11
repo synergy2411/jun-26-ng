@@ -82,6 +82,27 @@ Local Scope -> Outer Scope -> Global Scope
 
 # TypeScript : JavaScript with Type System
 
+- Robust Type System
+- Better Intellisense
+- Well supported tools (eg. linters)
+- Better readability
+- Additional Types
+- Additional TS Features (eg. Decorators)
+
+## Compilation Context
+
+- set of configuration that determines TS conversion to JS
+- tsconfig.json
+
+## Type System
+
+- any
+- unknown
+- void
+- never
+- custom type system (type)
+- All JS DataTypes available
+
 ## TypeScript compiler
 
 > [sudo] npm install typescript -g
@@ -89,9 +110,57 @@ Local Scope -> Outer Scope -> Global Scope
 > tsc src/main.ts
 > node src/main.js
 
-### Decorators
+## Generics
+
+- Placeholder for Datatypes
+- Also knnown as polymorphic type
+- Using extends keyword, we can put constraint on Generic Type
+
+## Decorators : functions used to make meta-programming
 
 - Class : @Component, @NgModule, @Injectable etc
 - Class Method : @HostBinding
 - Method Parameters : @skip, @Optional, @Host
 - Class Properties : @Input, @Ouput
+
+## Module System
+
+- To avoid global pollution
+- Either import statement or export keyword
+- File Module : created by developer
+- External Module : created by community people
+
+# Various JS Libraries / Framework
+
+- AngularJS: Library; 2011
+- Angular\* : 2014; 2 way data binding; State Management, SPA, XHR, DOM manipulation, Template, MV\* Pattern, Animation, Form Validation, enterprise-grade apps, Shadow DOM, Component based architecture, Corporate care-taker, vast community support, active developers, Testability, Scalability, Maintainability etc. Angular compiler takes place in final build. 'Tree-shaking', 'Lazy loading', Renderer2, ivy compiler
+
+- React: 35-40kb in size; quickly renders the UI; Virtual DOM, Diffing Algo, Reconciliation; Props, State; ReactRouter; Fetch API / Axios
+- Vue\* : Progressive framework; XHR Calls, State Management, Template, Two way Data Binding, SPA etc. Best of both - Angular and React. 'Evan You'. Emerging Framework
+- Ember\* : Frequent changes in API
+- Backbone : MVC Pattern at client side
+- Knockout : 2 way data binding; MVVM Pattern
+- Preact : light-weight version of React
+- jQuery : DOM Manipulation; Animation, AJAX Calls
+- Stencil\* : Virtual DOM, Component based archiecture; Rich Components
+- Electron : Standalone Apps
+- NextJS : Full Stack Apps; Client side and server side code. Based on React.
+
+- NodeJS : A Platform
+- ExpressJS / Koa / Hapi / SailsJS / KrackenJS : Web app framework
+
+## Angular Version v17.x
+
+- Module based Apps
+- Standalone Apps
+
+> npm install -g @angular/cli@17
+> ng version
+> ng new first-app [Standalone Apps]
+> ng new first-app --no-standalone --no-routing [Module based Apps]
+> cd first-app
+> npm start
+
+## CLI Commands
+
+> ng g c path/to/component/name
