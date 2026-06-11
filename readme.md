@@ -164,3 +164,9 @@ Local Scope -> Outer Scope -> Global Scope
 ## CLI Commands
 
 > ng g c path/to/component/name
+
+## Using Bootstrap
+
+- npm install bootstrap
+- configure bootstrap in angular.json
+- restart the server
