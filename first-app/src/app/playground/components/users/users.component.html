@@ -3,6 +3,7 @@
     <li class="list-group-item">
       <div class="row">
         <div class="col-4">
+          <app-user-image></app-user-image>
           <img
             class="img-fluid rounded-circle mb-2"
             [src]="user.avatar"
@@ -15,11 +16,7 @@
           </div>
         </div>
         <div class="col-8">
-          <h2>{{ user.firstName }} {{ user.lastName }}</h2>
-          <p>Date of Birth : <span [innerHTML]="user.dob"></span></p>
-          <p>Income : <span [innerHTML]="user.income"></span></p>
-          <p>Total Votes : {{ user.votes }}</p>
-          <input type="number" [(ngModel)]="user.votes" />
+          <app-user-info [user]="user"></app-user-info>
         </div>
       </div>
     </li>
