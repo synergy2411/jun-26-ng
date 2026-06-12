@@ -180,5 +180,27 @@ Local Scope -> Outer Scope -> Global Scope
   > ( Event Binding )
   > Two way data binding [( ngModel )]
 - Nested Component Communication
+
   > Parent-to-Child : @Input() + Property Binding
   > Child-to-Parent : @Output() + EventEmitter + Event Binding
+
+### LifeCycle Events
+
+- ngOnChanges
+- ngOnInit
+- ngDoCheck
+- ngAfterContentInit
+- ngAfterContentChecked
+- ngAfterViewInit
+- ngAfterViewChecked
+- ngOnDestroy
+
+- ViewEncapsulation
+  > Emulated (default):
+  - apply global style but preference will be given to local styles
+    > ShadowDOM :
+  - does not apply global styles, only local style will apply
+    > None
+    - local styles will affect other part of the app
+
+### Shadow DOM : encapsulation

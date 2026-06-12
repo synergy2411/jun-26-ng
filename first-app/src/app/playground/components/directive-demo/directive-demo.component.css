@@ -1,0 +1,7 @@
+.feature {
+  border-bottom: 2px green solid;
+}
+
+.focused {
+  font-weight: 800;
+}

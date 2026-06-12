@@ -8,6 +8,7 @@ import { UserImageComponent } from './playground/components/users/user-image/use
 import { UserInfoComponent } from './playground/components/users/user-info/user-info.component';
 import { CardComponent } from './playground/ui/card/card.component';
 import { LifeCycleComponent } from './playground/components/life-cycle/life-cycle.component';
+import { DirectiveDemoComponent } from './playground/components/directive-demo/directive-demo.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { LifeCycleComponent } from './playground/components/life-cycle/life-cycl
     UserInfoComponent,
     CardComponent,
     LifeCycleComponent,
+    DirectiveDemoComponent,
   ],
   imports: [
     // Modules

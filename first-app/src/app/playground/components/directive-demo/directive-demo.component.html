@@ -1,0 +1,23 @@
+<h1>Directive Demo Component</h1>
+
+<h2>Attribute Directive</h2>
+
+<p
+  [ngStyle]="dynamicStyle"
+  (mouseenter)="changeStyle(true)"
+  (mouseleave)="changeStyle(false)"
+>
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil atque pariatur
+  cupiditate animi ratione. Velit dolore recusandae et minus quod, veritatis
+  necessitatibus non. Aspernatur, fugiat?
+</p>
+
+<p
+  [ngClass]="dynamicClass"
+  (mouseenter)="toggleClass()"
+  (mouseleave)="toggleClass()"
+>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet laboriosam
+  voluptas saepe possimus dolorem quidem porro tempore autem libero
+  necessitatibus! Natus perferendis dolores quae ipsum.
+</p>
