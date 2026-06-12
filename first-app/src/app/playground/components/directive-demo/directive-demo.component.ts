@@ -16,6 +16,14 @@ export class DirectiveDemoComponent {
     focused: false,
   };
 
+  products = [
+    { name: 'iPhone 17 Pro', price: 120000, qty: 100 },
+    { name: 'Samsung Galaxy 26', price: 175000, qty: 10 },
+    { name: 'Motorola razr', price: 70000, qty: 199 },
+  ];
+
+  selectedTab = 0;
+
   changeStyle(flag: boolean) {
     if (flag) {
       this.dynamicStyle.color = '#fff';

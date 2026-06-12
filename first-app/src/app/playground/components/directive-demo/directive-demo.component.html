@@ -1,23 +1,96 @@
 <h1>Directive Demo Component</h1>
 
-<h2>Attribute Directive</h2>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" (click)="selectedTab = 1">Structural Directives</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="selectedTab = 2">Attributes Directives</a>
+  </li>
+</ul>
 
-<p
-  [ngStyle]="dynamicStyle"
-  (mouseenter)="changeStyle(true)"
-  (mouseleave)="changeStyle(false)"
->
-  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil atque pariatur
-  cupiditate animi ratione. Velit dolore recusandae et minus quod, veritatis
-  necessitatibus non. Aspernatur, fugiat?
-</p>
+<div [ngSwitch]="selectedTab">
+  <div *ngSwitchCase="1">
+    <h2>Structural Directives</h2>
 
-<p
-  [ngClass]="dynamicClass"
-  (mouseenter)="toggleClass()"
-  (mouseleave)="toggleClass()"
->
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet laboriosam
-  voluptas saepe possimus dolorem quidem porro tempore autem libero
-  necessitatibus! Natus perferendis dolores quae ipsum.
-</p>
+    <table class="table table-stripped">
+      <thead>
+        <tr>
+          <th>Sr. No</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Qty</th>
+          <th>Compare</th>
+          <th>IsEven</th>
+          <th>IsOdd</th>
+          <th>IsFirst</th>
+          <th>IsLast</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let product of products;
+            index as i;
+            even as isEven;
+            odd as isOdd;
+            first as isFirst;
+            last as isLast
+          "
+        >
+          <td>{{ i + 1 }}</td>
+          <td [ngClass]="{ feature: isLast, focused: isFirst }">
+            {{ product.name }}
+          </td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.qty }}</td>
+          <td>
+            <span *ngIf="product.price > 100000; else budgetPhones"
+              >Flagship</span
+            >
+          </td>
+          <td>{{ isEven }}</td>
+          <td>{{ isOdd }}</td>
+          <td>{{ isFirst }}</td>
+          <td>{{ isLast }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ng-template #budgetPhones>
+      <span>Budget</span>
+    </ng-template>
+
+    <ul>
+      @for (product of products; track $index) {
+        @if (product.price > 100000) {
+          <li>{{ product.name }} - {{ product.price }}</li>
+        }
+      }
+    </ul>
+  </div>
+  <div *ngSwitchCase="2">
+    <h2>Attribute Directive</h2>
+
+    <p
+      [ngStyle]="dynamicStyle"
+      (mouseenter)="changeStyle(true)"
+      (mouseleave)="changeStyle(false)"
+    >
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil atque
+      pariatur cupiditate animi ratione. Velit dolore recusandae et minus quod,
+      veritatis necessitatibus non. Aspernatur, fugiat?
+    </p>
+
+    <p
+      [ngClass]="dynamicClass"
+      (mouseenter)="toggleClass()"
+      (mouseleave)="toggleClass()"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+      laboriosam voluptas saepe possimus dolorem quidem porro tempore autem
+      libero necessitatibus! Natus perferendis dolores quae ipsum.
+    </p>
+  </div>
+  <div *ngSwitchDefault><p>Please select any tab to display examples</p></div>
+</div>
