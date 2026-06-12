@@ -184,6 +184,8 @@ Local Scope -> Outer Scope -> Global Scope
   > Parent-to-Child : @Input() + Property Binding
   > Child-to-Parent : @Output() + EventEmitter + Event Binding
 
+### Content Projection: <ng-content>
+
 ### LifeCycle Events
 
 - ngOnChanges
@@ -204,3 +206,13 @@ Local Scope -> Outer Scope -> Global Scope
     - local styles will affect other part of the app
 
 ### Shadow DOM : encapsulation
+
+## Directive
+
+- Component Directive
+- Attribute Directive (ngClass, ngStyle)
+- Structural Directive (ngIf, ngFor, ngSwitch)
+- Custom Directive
+  > ElementRef : reference of DOM element
+  > Renderer2 : allows DOM Manipulation
+  > @HostBinding, @HostListener
