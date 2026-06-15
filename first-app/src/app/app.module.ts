@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './playground/components/users/users.component';
-import { FormsModule } from '@angular/forms';
 import { UserImageComponent } from './playground/components/users/user-image/user-image.component';
 import { UserInfoComponent } from './playground/components/users/user-info/user-info.component';
 import { CardComponent } from './playground/ui/card/card.component';
@@ -17,6 +17,7 @@ import { FilterPipe } from './playground/pipes/filter.pipe';
 import { SortPipe } from './playground/pipes/sort.pipe';
 import { LoginComponent } from './playground/components/auth/login/login.component';
 import { ForbiddenPasswordDirective } from './playground/directives/forbidden-password.directive';
+import { RegisterComponent } from './playground/components/auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -36,11 +37,13 @@ import { ForbiddenPasswordDirective } from './playground/directives/forbidden-pa
     SortPipe,
     LoginComponent,
     ForbiddenPasswordDirective,
+    RegisterComponent,
   ],
   imports: [
     // Modules
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [], // Services
   bootstrap: [AppComponent],
