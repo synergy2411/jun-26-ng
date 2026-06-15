@@ -1,0 +1,14 @@
+<h1>Pipe Demo Component</h1>
+
+<h2>Built-in Pipes</h2>
+<ul>
+  <li>Upper Case : {{ "hello world" | uppercase }}</li>
+  <li>Lower Case : {{ "HELLO WORLD" | lowercase }}</li>
+  <li>Title Case : {{ "hello WORLD" | titlecase }}</li>
+  <li>Date Pipe : {{ product.launchDate | date: "dd-MM-yyyy" }}</li>
+  <li>Currency Pipe : {{ product.price | currency: "INR" }}</li>
+  <li>Number Pipe : {{ product.price | number: "4.2-3" }}</li>
+  <li>Percent Pipe : {{ 0.18 | percent }}</li>
+  <li>JSON Pipe : {{ product | json }}</li>
+  <li>Async Pipe : {{ response | async }}</li>
+</ul>

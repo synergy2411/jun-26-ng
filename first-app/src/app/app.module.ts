@@ -10,6 +10,7 @@ import { CardComponent } from './playground/ui/card/card.component';
 import { LifeCycleComponent } from './playground/components/life-cycle/life-cycle.component';
 import { DirectiveDemoComponent } from './playground/components/directive-demo/directive-demo.component';
 import { HighlightDirective } from './playground/directives/highlight.directive';
+import { PipeDemoComponent } from './playground/components/pipe-demo/pipe-demo.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HighlightDirective } from './playground/directives/highlight.directive'
     LifeCycleComponent,
     DirectiveDemoComponent,
     HighlightDirective,
+    PipeDemoComponent,
   ],
   imports: [
     // Modules
