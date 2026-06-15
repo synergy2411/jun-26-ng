@@ -18,8 +18,21 @@
               ngModel
               email
               required
+              #usernameModel="ngModel"
             />
             <label for="username">Email</label>
+
+            <!-- Username Error Messages -->
+            <div *ngIf="usernameModel.invalid && usernameModel.touched">
+              <div *ngIf="usernameModel.hasError('required')">
+                <small style="color: red">*Email is mandatory field</small>
+              </div>
+              <div *ngIf="usernameModel.hasError('email')">
+                <small style="color: red"
+                  >*Should have proper email format</small
+                >
+              </div>
+            </div>
           </div>
 
           <!-- password -->
@@ -33,8 +46,20 @@
               ngModel
               required
               minlength="6"
+              #passwordModel="ngModel"
             />
             <label for="password">Password</label>
+            <!-- Password Error Messages -->
+            <div *ngIf="passwordModel.invalid && passwordModel.touched">
+              <div *ngIf="passwordModel.hasError('required')">
+                <small style="color: red">*Password is mandatory field</small>
+              </div>
+              <div *ngIf="passwordModel.hasError('minlength')">
+                <small style="color: red"
+                  >*Should have at least six characters</small
+                >
+              </div>
+            </div>
           </div>
 
           <!-- buttons - Login and Reset -->
