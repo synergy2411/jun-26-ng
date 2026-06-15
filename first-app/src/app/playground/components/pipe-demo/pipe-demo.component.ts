@@ -18,4 +18,13 @@ export class PipeDemoComponent {
       resolve('Data arrived in app');
     }, 2000);
   });
+
+  todoCollection = [
+    { label: 'shopping', status: 'pending' },
+    { label: 'planting', status: 'completed' },
+    { label: 'insurance', status: 'pending' },
+    { label: 'grocery', status: 'pending' },
+  ];
+
+  filteredStatus = '';
 }

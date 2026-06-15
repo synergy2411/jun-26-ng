@@ -1,5 +1,31 @@
 <h1>Pipe Demo Component</h1>
 
+<h2>Custom Pipes</h2>
+
+<h3 class="text-center mb-3">My Todos</h3>
+
+<select
+  name="todo-status"
+  class="mb-3 form-control"
+  [(ngModel)]="filteredStatus"
+>
+  <option value="pending">Pending</option>
+  <option value="completed">Completed</option>
+</select>
+
+<ul class="list-group">
+  <li
+    *ngFor="let todo of todoCollection | filter: filteredStatus"
+    class="list-group-item mb-2"
+  >
+    {{ todo.label | uppercase }} -
+    <span class="float-end">{{ todo.status | titlecase }}</span>
+  </li>
+</ul>
+
+<p>Contact Number : {{ 9876543210 | countryCode: "USA" }}</p>
+<p>Reverse Pipe : {{ "Hello World" | reverse }}</p>
+
 <h2>Built-in Pipes</h2>
 <ul>
   <li>Upper Case : {{ "hello world" | uppercase }}</li>

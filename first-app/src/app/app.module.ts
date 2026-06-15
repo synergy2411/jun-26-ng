@@ -11,6 +11,9 @@ import { LifeCycleComponent } from './playground/components/life-cycle/life-cycl
 import { DirectiveDemoComponent } from './playground/components/directive-demo/directive-demo.component';
 import { HighlightDirective } from './playground/directives/highlight.directive';
 import { PipeDemoComponent } from './playground/components/pipe-demo/pipe-demo.component';
+import { CountryCodePipe } from './playground/pipes/country-code.pipe';
+import { ReversePipe } from './playground/pipes/reverse.pipe';
+import { FilterPipe } from './playground/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { PipeDemoComponent } from './playground/components/pipe-demo/pipe-demo.c
     DirectiveDemoComponent,
     HighlightDirective,
     PipeDemoComponent,
+    CountryCodePipe,
+    ReversePipe,
+    FilterPipe,
   ],
   imports: [
     // Modules
