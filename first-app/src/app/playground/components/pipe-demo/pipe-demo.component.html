@@ -4,22 +4,31 @@
 
 <h3 class="text-center mb-3">My Todos</h3>
 
-<select
-  name="todo-status"
-  class="mb-3 form-control"
-  [(ngModel)]="filteredStatus"
->
-  <option value="pending">Pending</option>
-  <option value="completed">Completed</option>
-</select>
+<div class="row">
+  <div class="col">
+    <select
+      name="todo-status"
+      class="mb-3 form-control"
+      [(ngModel)]="filteredStatus"
+    >
+      <option value="pending">Pending</option>
+      <option value="completed">Completed</option>
+    </select>
+  </div>
+  <div class="col">
+    <div class="d-grid">
+      <button class="btn btn-primary" (click)="onAddTodo()">Add Todo</button>
+    </div>
+  </div>
+</div>
 
 <ul class="list-group">
   <li
     *ngFor="let todo of todoCollection | filter: filteredStatus"
     class="list-group-item mb-2"
   >
-    {{ todo.label | uppercase }} -
-    <span class="float-end">{{ todo.status | titlecase }}</span>
+    {{ todo.label | uppercase }}
+    <span class="float-end">- {{ todo.status | titlecase }}</span>
   </li>
 </ul>
 

@@ -27,4 +27,13 @@ export class PipeDemoComponent {
   ];
 
   filteredStatus = '';
+
+  onAddTodo() {
+    this.todoCollection = [
+      ...this.todoCollection,
+      { label: 'New Todo', status: 'pending' },
+    ];
+    // this.todoCollection.push({ label: 'New Todo', status: 'pending' });
+    console.log('Length : ', this.todoCollection.length);
+  }
 }

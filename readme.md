@@ -216,3 +216,8 @@ Local Scope -> Outer Scope -> Global Scope
   > ElementRef : reference of DOM element
   > Renderer2 : allows DOM Manipulation
   > @HostBinding, @HostListener
+
+### Pure and Impure Changes
+
+- Pure change : Change in Object reference
+- Impure change : change in value
