@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {
   AbstractControl,
+  FormArray,
   FormBuilder,
   FormControl,
   FormGroup,
@@ -33,6 +34,7 @@ export class RegisterComponent {
           Validators.required,
           Validators.minLength(6),
         ]),
+        hobbies: this.fb.array([]),
       },
       { validators: RegisterComponent.passwordMatch },
     );
@@ -50,11 +52,28 @@ export class RegisterComponent {
     return this.registerForm.get('cnfPassword') as FormControl;
   }
 
+  get hobbies() {
+    return this.registerForm.get('hobbies') as FormArray;
+  }
+
+  onAddHobby() {
+    this.hobbies.push(
+      this.fb.group({
+        name: new FormControl(),
+        freq: new FormControl(),
+      }),
+    );
+  }
+
+  onDeleteHobby(i: number) {
+    this.hobbies.removeAt(i);
+  }
+
   onSubmit() {
     console.log(this.registerForm);
   }
 
-  // Filed level Validator - Special Symbol Validator
+  // Field level Validator - Special Symbol Validator
   static specialSymbolValidator(symbol: string): ValidatorFn {
     return function (control: AbstractControl): ValidationErrors | null {
       const hasSymbol = String(control.value).includes(symbol);
