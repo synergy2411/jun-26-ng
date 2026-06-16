@@ -20,6 +20,7 @@ import { ForbiddenPasswordDirective } from './playground/directives/forbidden-pa
 import { RegisterComponent } from './playground/components/auth/register/register.component';
 import { CompAComponent } from './playground/components/counter/comp-a/comp-a.component';
 import { CompBComponent } from './playground/components/counter/comp-b/comp-b.component';
+import { CounterService } from './playground/services/counter.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { CompBComponent } from './playground/components/counter/comp-b/comp-b.co
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [], // Services
+  // providers: [CounterService], // Services
   bootstrap: [AppComponent],
 })
 export class AppModule {}

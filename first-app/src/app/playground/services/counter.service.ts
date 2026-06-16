@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+// Tree-shakable
 @Injectable({
   providedIn: 'root',
 })

@@ -1,1 +1,15 @@
-<p>comp-b works!</p>
+<h2>Component B Loaded</h2>
+
+<h4>Counter : {{ counterService.getCounter() }}</h4>
+
+<div class="btn-group">
+  <button class="btn btn-primary" (click)="counterService.increment()">
+    Increase
+  </button>
+  <button class="btn btn-success" (click)="counterService.decrement()">
+    Decrease
+  </button>
+  <button class="btn btn-secondary" (click)="counterService.reset()">
+    Reset
+  </button>
+</div>
