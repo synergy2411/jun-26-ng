@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-header">{{ expense.title | uppercase }}</div>
+  <div class="card-body">
+    <p>Amount : {{ expense.amount | currency: "INR" }}</p>
+    <p>Created At : {{ expense.createdAt | date: "MMM dd, yyyy" }}</p>
+    <div class="float-end">
+      <button class="btn btn-outline-danger btn-sm" (click)="onDelete()">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>

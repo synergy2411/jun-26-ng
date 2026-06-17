@@ -10,7 +10,11 @@ export class ExpenseService {
   private httpClient = inject(HttpClient);
   private baseUrl = 'http://localhost:3000/expenses';
 
-  fetchExpenses(): Observable<Expense[]> {
+  fetchAll(): Observable<Expense[]> {
     return this.httpClient.get<Expense[]>(this.baseUrl);
+  }
+
+  delete(expenseId: string) {
+    return this.httpClient.delete(`${this.baseUrl}/${expenseId}`);
   }
 }

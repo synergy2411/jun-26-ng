@@ -24,6 +24,7 @@ import { CompBComponent } from './playground/components/counter/comp-b/comp-b.co
 import { CounterService } from './playground/services/counter.service';
 import { ObservableDemoComponent } from './playground/components/observable-demo/observable-demo.component';
 import { ExpensesComponent } from './playground/components/expenses/expenses.component';
+import { ExpenseItemComponent } from './playground/components/expenses/expense-item/expense-item.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ExpensesComponent } from './playground/components/expenses/expenses.com
     CompBComponent,
     ObservableDemoComponent,
     ExpensesComponent,
+    ExpenseItemComponent,
   ],
   imports: [
     // Modules

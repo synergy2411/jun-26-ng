@@ -13,7 +13,15 @@ export class ExpensesComponent implements OnInit {
 
   ngOnInit(): void {
     this.service
-      .fetchExpenses()
+      .fetchAll()
       .subscribe((expenses) => (this.expenseCollection = expenses));
+  }
+
+  onDelete(expenseId: string) {
+    this.service.delete(expenseId).subscribe(() => {
+      this.expenseCollection = this.expenseCollection.filter(
+        (exp) => exp.id !== expenseId,
+      );
+    });
   }
 }
