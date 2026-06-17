@@ -30,15 +30,17 @@ export class ExpensesComponent implements OnInit {
   addNewExpense(expense: Expense) {
     if (this.editExpense) {
       this.service.update(expense).subscribe((newExpense) => {
-        this.expenseCollection = [newExpense, ...this.expenseCollection];
-        this.showForm = false;
+        const position = this.expenseCollection.findIndex(
+          (exp) => exp.id === newExpense.id,
+        );
+        this.expenseCollection[position] = newExpense;
       });
     } else {
       this.service.create(expense).subscribe((newExpense) => {
         this.expenseCollection = [newExpense, ...this.expenseCollection];
-        this.showForm = false;
       });
     }
+    this.showForm = false;
   }
 
   onEdit(expense: Expense) {

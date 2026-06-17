@@ -27,6 +27,7 @@ export class ExpenseFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.expenseForm = this.fb.group({
+      id: new FormControl(),
       title: new FormControl(),
       amount: new FormControl(),
       createdAt: new FormControl(),
@@ -35,10 +36,22 @@ export class ExpenseFormComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.expense) {
+      // yyyy-mm-dd
+      const toFormat = new Date(this.expense.createdAt);
+      const year = toFormat.getFullYear();
+      const day = toFormat.toLocaleString('en-US', {
+        day: 'numeric',
+      });
+      const month = toFormat.toLocaleString('en-US', {
+        month: '2-digit',
+      });
+      const formattedDate = `${year}-${month}-${day}`;
+
       this.expenseForm.patchValue({
+        id: this.expense.id,
         title: this.expense.title,
         amount: this.expense.amount,
-        createdAt: this.expense.createdAt,
+        createdAt: formattedDate,
       });
     }
   }
@@ -48,9 +61,6 @@ export class ExpenseFormComponent implements OnInit {
       ...this.expenseForm.value,
       createdAt: new Date(this.expenseForm.value.createdAt),
     };
-    if (this.expense) {
-      newExpense.id = this.expense.id;
-    }
     this.newExpenseEvent.emit(newExpense);
   }
 

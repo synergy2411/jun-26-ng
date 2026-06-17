@@ -27,10 +27,14 @@ export class ExpenseService {
   }
 
   update(expense: Expense) {
-    return this.httpClient.patch(`${this.baseUrl}/${expense.id}`, expense, {
-      headers: {
-        'Content-Type': 'application/json',
+    return this.httpClient.patch<Expense>(
+      `${this.baseUrl}/${expense.id}`,
+      expense,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
       },
-    });
+    );
   }
 }

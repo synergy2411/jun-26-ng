@@ -14,9 +14,15 @@
     },
     {
       "title": "planting",
-      "amount": 299,
-      "createdAt": "2026-06-10T00:00:00.000Z",
+      "amount": 30,
+      "createdAt": "2026-06-09T00:00:00.000Z",
       "id": 4
+    },
+    {
+      "id": 5,
+      "title": "insurance",
+      "amount": 190,
+      "createdAt": "2026-06-16T00:00:00.000Z"
     }
   ]
 }
