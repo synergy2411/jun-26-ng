@@ -1,5 +1,16 @@
 import { Component } from '@angular/core';
-import { from, interval, Observable, Subscription } from 'rxjs';
+import {
+  filter,
+  first,
+  from,
+  interval,
+  map,
+  Observable,
+  skip,
+  Subscription,
+  take,
+  tap,
+} from 'rxjs';
 
 @Component({
   selector: 'app-observable-demo',
@@ -24,7 +35,7 @@ export class ObservableDemoComponent {
   friends$ = from(this.friends);
 
   onSubscribe() {
-    this.unsub$ = this.obs$.subscribe({
+    this.unsub$ = this.obs$.pipe(map((value) => ' - ' + value)).subscribe({
       next: (data) => console.log('Data : ', data),
       error: (err) => console.error(err),
       complete: () => console.log('[COMPLETED]'),
@@ -36,7 +47,18 @@ export class ObservableDemoComponent {
   }
 
   onIntervalSubs() {
-    this.unsub$ = this.interval$.subscribe((data) => console.log(data));
+    this.unsub$ = this.interval$
+      .pipe(
+        tap((value) => console.log('[TAP]', value)),
+        filter((value) => value % 2 == 0),
+        tap((value) => console.log('[TAP AFTER FILTER]', value)),
+        skip(1),
+        tap((value) => console.log('[TAP AFTER SKIP]', value)),
+        first(),
+        tap((value) => console.log('[TAP AFTER FIRST]', value)),
+        take(3),
+      )
+      .subscribe((data) => console.log(data));
   }
 
   onIntervalUnsub() {

@@ -3,6 +3,11 @@
 <h4>Custom Observable from Scratch</h4>
 <button (click)="onSubscribe()" class="btn btn-primary">Subscribe</button>
 <button (click)="onUnsubscribe()" class="btn btn-danger">Unsubscribe</button>
+
+<h5>Observable consuming using Async Pipe</h5>
+<p>
+  {{ obs$ | async }}
+</p>
 <hr />
 
 <h4>Interval Observable</h4>
@@ -12,9 +17,12 @@
 <button class="btn btn-secondary" (click)="onIntervalUnsub()">
   Interval Unsubscribe
 </button>
+<!-- {{ interval$ | async }} -->
 <hr />
 
 <h4>From Observable</h4>
 <button class="btn btn-primary" (click)="onFromSubscribe()">
   From Friends Subscribe
 </button>
+
+<!-- {{ friends$ | async }} -->
