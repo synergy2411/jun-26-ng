@@ -4,6 +4,9 @@
     <p>Amount : {{ expense.amount | currency: "INR" }}</p>
     <p>Created At : {{ expense.createdAt | date: "MMM dd, yyyy" }}</p>
     <div class="float-end">
+      <button class="btn btn-outline-success btn-sm" (click)="onEdit()">
+        Edit
+      </button>
       <button class="btn btn-outline-danger btn-sm" (click)="onDelete()">
         Delete
       </button>

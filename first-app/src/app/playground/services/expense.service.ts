@@ -25,4 +25,12 @@ export class ExpenseService {
       },
     });
   }
+
+  update(expense: Expense) {
+    return this.httpClient.patch(`${this.baseUrl}/${expense.id}`, expense, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  }
 }

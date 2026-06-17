@@ -11,6 +11,7 @@ export class ExpensesComponent implements OnInit {
   service = inject(ExpenseService);
   expenseCollection!: Expense[];
   showForm = false;
+  editExpense!: Expense | null;
 
   ngOnInit(): void {
     this.service
@@ -27,9 +28,26 @@ export class ExpensesComponent implements OnInit {
   }
 
   addNewExpense(expense: Expense) {
-    this.service.create(expense).subscribe((newExpense) => {
-      this.expenseCollection = [newExpense, ...this.expenseCollection];
-      this.showForm = false;
-    });
+    if (this.editExpense) {
+      this.service.update(expense).subscribe((newExpense) => {
+        this.expenseCollection = [newExpense, ...this.expenseCollection];
+        this.showForm = false;
+      });
+    } else {
+      this.service.create(expense).subscribe((newExpense) => {
+        this.expenseCollection = [newExpense, ...this.expenseCollection];
+        this.showForm = false;
+      });
+    }
+  }
+
+  onEdit(expense: Expense) {
+    this.showForm = true;
+    this.editExpense = expense;
+  }
+
+  onCloseForm() {
+    this.showForm = false;
+    this.editExpense = null;
   }
 }

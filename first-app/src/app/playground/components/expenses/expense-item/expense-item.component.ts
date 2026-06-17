@@ -12,6 +12,9 @@ export class ExpenseItemComponent {
   @Output()
   deleteEvent = new EventEmitter<string>();
 
+  @Output()
+  editEvent = new EventEmitter<Expense>();
+
   onDelete() {
     if (
       confirm(
@@ -20,5 +23,9 @@ export class ExpenseItemComponent {
       )
     )
       this.deleteEvent.emit(this.expense.id);
+  }
+
+  onEdit() {
+    this.editEvent.emit(this.expense);
   }
 }

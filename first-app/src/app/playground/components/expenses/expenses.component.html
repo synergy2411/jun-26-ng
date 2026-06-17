@@ -10,14 +10,25 @@
   </div>
 </div>
 
+<!-- Adding the expense -->
 <app-expense-form
+  (closeEvent)="showForm = false"
   (newExpenseEvent)="addNewExpense($event)"
-  *ngIf="showForm"
+  *ngIf="showForm && !editExpense"
+></app-expense-form>
+
+<!-- Editing the expense -->
+<app-expense-form
+  (closeEvent)="onCloseForm()"
+  [expense]="editExpense"
+  (newExpenseEvent)="addNewExpense($event)"
+  *ngIf="showForm && editExpense"
 ></app-expense-form>
 
 <div class="row">
   <div class="col-4" *ngFor="let expense of expenseCollection">
     <app-expense-item
+      (editEvent)="onEdit($event)"
       (deleteEvent)="onDelete($event)"
       [expense]="expense"
     ></app-expense-item>
