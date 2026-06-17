@@ -284,3 +284,9 @@ Local Scope -> Outer Scope -> Global Scope
 2. Create json file
 3. Serve the json file with json-server
    > json-server --watch db.json
+
+## Subject : acts as both Observer and Observable
+
+- BehaviourSubject : always have seed value
+- ReplaySubject : receives number of emission to replay
+- AsyncSubject : provide last emitted value upon completion

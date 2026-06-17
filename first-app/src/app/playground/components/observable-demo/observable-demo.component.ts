@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
+  AsyncSubject,
+  BehaviorSubject,
   filter,
   first,
   from,
   interval,
   map,
   Observable,
+  ReplaySubject,
   skip,
+  Subject,
   Subscription,
   take,
   tap,
@@ -17,7 +21,7 @@ import {
   templateUrl: './observable-demo.component.html',
   styleUrl: './observable-demo.component.css',
 })
-export class ObservableDemoComponent {
+export class ObservableDemoComponent implements OnInit {
   obs$ = new Observable((observer) => {
     setTimeout(() => observer.next('First Package'), 1500);
     setTimeout(() => observer.next('Second Package'), 3000);
@@ -33,6 +37,24 @@ export class ObservableDemoComponent {
   friends = ['Monica', 'Ross', 'Rachel', 'Joey', 'Chandler'];
 
   friends$ = from(this.friends);
+
+  ngOnInit(): void {
+    // Subjects : act as both Observer as well as Observable
+    // const subject = new Subject();
+    // const subject = new BehaviorSubject(99);
+    // const subject = new ReplaySubject(2);
+    const subject = new AsyncSubject();
+
+    subject.subscribe((data) => console.log('Subs 1: ', data));
+
+    subject.next(50);
+    subject.next(100);
+    subject.next(200);
+
+    subject.subscribe((data) => console.log('Subs 2: ', data));
+    subject.next(300);
+    subject.complete();
+  }
 
   onSubscribe() {
     this.unsub$ = this.obs$.pipe(map((value) => ' - ' + value)).subscribe({
@@ -66,6 +88,8 @@ export class ObservableDemoComponent {
   }
 
   onFromSubscribe() {
-    this.friends$.subscribe(console.log);
+    this.friends$
+      .pipe(filter((friend) => friend.includes('R')))
+      .subscribe(console.log);
   }
 }
