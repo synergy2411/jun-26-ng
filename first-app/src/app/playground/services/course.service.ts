@@ -15,4 +15,8 @@ export class CourseService {
   fetchAll() {
     return this.httpClient.get<Course[]>(this.baseUrl);
   }
+
+  fetchById(courseId: string) {
+    return this.httpClient.get<Course>(`${this.baseUrl}/${courseId}`);
+  }
 }

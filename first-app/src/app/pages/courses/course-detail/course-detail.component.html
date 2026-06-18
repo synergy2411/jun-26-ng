@@ -1,1 +1,14 @@
-<p>course-detail works!</p>
+<div class="backdrop">
+  <div class="my-modal">
+    <div class="card">
+      <img class="card-img-top" [src]="course.logo" [alt]="course.title" />
+      <div class="card-body">
+        <h4 class="card-title">{{ course.title | titlecase }}</h4>
+        <p class="card-text">Duration : {{ course.duration | number }}</p>
+        <small
+          >Click <a routerLink="/courses">here</a> to see all courses.</small
+        >
+      </div>
+    </div>
+  </div>
+</div>
