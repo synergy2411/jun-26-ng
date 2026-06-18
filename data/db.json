@@ -26,5 +26,21 @@
       "duration": 60,
       "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcR5U16C8yXgBpl7-Bc7Itjx3_LRl425zINA&s"
     }
+  ],
+  "users": [
+    {
+      "email": "test@test.com",
+      "password": "test!123",
+      "cnfPassword": "test!123",
+      "hobbies": [
+        {
+          "name": "Cricket",
+          "freq": 2
+        }
+      ],
+      "method": "card",
+      "acceptedTerms": true,
+      "id": 1
+    }
   ]
 }

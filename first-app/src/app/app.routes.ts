@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './playground/components/page-not-found/pa
 import { CoursesComponent } from './pages/courses/courses.component';
 import { CourseDetailComponent } from './pages/courses/course-detail/course-detail.component';
 import { courseResolver } from './playground/resolvers/course.resolver';
+import { loginGuard } from './playground/guards/login.guard';
 
 export const APP_ROUTES: Routes = [
   {
@@ -28,6 +29,7 @@ export const APP_ROUTES: Routes = [
   {
     path: 'courses', // http://localhost:4200/course
     component: CoursesComponent,
+    canActivate: [loginGuard],
   },
   {
     path: 'courses/:courseId',

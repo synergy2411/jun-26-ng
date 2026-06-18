@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   AbstractControl,
   FormArray,
@@ -9,6 +9,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -17,6 +18,8 @@ import {
 })
 export class RegisterComponent {
   registerForm: FormGroup;
+
+  private authService = inject(AuthService);
 
   paymentMethods = ['card', 'upi', 'cod'];
 
@@ -82,7 +85,9 @@ export class RegisterComponent {
   }
 
   onSubmit() {
-    console.log(this.registerForm);
+    this.authService
+      .onUserRegistration(this.registerForm.value)
+      .subscribe((createdUser) => console.log('User created : ', createdUser));
   }
 
   // Field level Validator - Special Symbol Validator
