@@ -15,6 +15,9 @@
           <li class="nav-item" *ngIf="authService.isUserAuthenticated()">
             <a class="nav-link" routerLink="courses">Courses</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="lazy">Lazy</a>
+          </li>
         </ul>
       </div>
       <div class="col-3" *ngIf="authService.isUserAuthenticated()">

@@ -32,6 +32,7 @@ import { APP_ROUTES } from './app.routes';
 import { MainNavigationComponent } from './playground/layout/main-navigation/main-navigation.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { CourseDetailComponent } from './pages/courses/course-detail/course-detail.component';
+import { EmployeeModule } from './modules/employee/employee.module';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { CourseDetailComponent } from './pages/courses/course-detail/course-deta
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(APP_ROUTES),
+    EmployeeModule,
   ],
   // providers: [CounterService], // Services
   bootstrap: [AppComponent],
