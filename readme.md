@@ -317,3 +317,25 @@ Local Scope -> Outer Scope -> Global Scope
 - User Interactivity
 - App loads in one go
 - Lazy Loading
+
+# Routing Terminologies
+
+- Routes : configuration; component and url path
+- Router : Service; for programmatic navigation
+- ActivatedRoute : Service; for accessing the current URL
+- RouterLink : prevents the page reload
+- RouterOutlet : provides space to load component template
+- Guards : allow / disallows to enter or exit the route
+- Dynamic Parameter : Route Parameter supplied to URL
+- Lazy loading : load the module on demand
+
+# Modules
+
+- Root Module
+- Feature Module
+
+# Testing
+
+# Standalone Project
+
+- ng new second-app

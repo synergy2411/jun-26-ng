@@ -56,5 +56,22 @@
       "acceptedTerms": true,
       "id": 2
     }
+  ],
+  "products": [
+    {
+      "id": "p001",
+      "name": "Mobile Phone",
+      "price": 199
+    },
+    {
+      "id": "p002",
+      "name": "Tablet",
+      "price": 99
+    },
+    {
+      "id": "p003",
+      "name": "Laptop",
+      "price": 499
+    }
   ]
 }

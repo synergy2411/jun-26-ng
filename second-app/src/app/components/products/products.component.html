@@ -1,0 +1,15 @@
+<h1>Products Component Loaded</h1>
+
+<ul>
+  @for (product of products; track $index) {
+    <li>
+      <h2>{{ product.name }}</h2>
+      <p>Price : {{ product.price }}</p>
+      @if (product.price > 200) {
+        <p>High Value product</p>
+      } @else {
+        <p>Budget product</p>
+      }
+    </li>
+  }
+</ul>

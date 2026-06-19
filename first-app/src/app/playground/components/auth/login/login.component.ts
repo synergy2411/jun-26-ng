@@ -12,6 +12,7 @@ export class LoginComponent {
 
   onSubmit(loginForm: NgForm) {
     console.log('Username : ', loginForm.value);
+    debugger;
     this.authService.onUserLogin({
       email: loginForm.value.username,
       password: loginForm.value.password,
