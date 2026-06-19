@@ -3,8 +3,8 @@
 <ul>
   @for (product of products; track $index) {
     <li>
-      <h2>{{ product.name }}</h2>
-      <p>Price : {{ product.price }}</p>
+      <h2>{{ product.name | uppercase }}</h2>
+      <p>Price : {{ product.price | currency }}</p>
       @if (product.price > 200) {
         <p>High Value product</p>
       } @else {

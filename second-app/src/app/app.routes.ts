@@ -11,4 +11,11 @@ export const routes: Routes = [
     path: 'products',
     component: ProductsComponent,
   },
+  {
+    path: 'counter',
+    loadComponent: () =>
+      import('./components/counter/counter.component').then(
+        (c) => c.CounterComponent,
+      ),
+  },
 ];
