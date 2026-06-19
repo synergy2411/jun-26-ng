@@ -1,0 +1,5 @@
+<h1>Parent Component Loaded</h1>
+
+<input type="text" [(ngModel)]="title" />
+
+<app-child [title]="title" (sendAlertEvent)="onAlert($event)"></app-child>
